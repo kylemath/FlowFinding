@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pathfinding Across Scales — From Cosmos to Quantum</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Navigation -->
+        <nav class="main-nav">
+            <div class="nav-brand">
+                <span class="brand-icon">◎</span>
+                <span class="brand-text">Pathfinding</span>
+            </div>
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="intro">Introduction</button>
+                <button class="nav-tab" data-tab="cosmic">Cosmic</button>
+                <button class="nav-tab" data-tab="earth">Earth Systems</button>
+                <button class="nav-tab" data-tab="surface">Surface</button>
+                <button class="nav-tab" data-tab="human">Human & Algorithmic</button>
+                <button class="nav-tab" data-tab="molecular">Molecular</button>
+                <button class="nav-tab" data-tab="quantum">Quantum Threshold</button>
+                <button class="nav-tab" data-tab="hhl">HHL Deep Dive</button>
+                <button class="nav-tab gtti-tab" data-tab="homogenization">Homogenization</button>
+                <button class="nav-tab gtti-tab" data-tab="circuit-mapping">Circuit Mapping</button>
+                <button class="nav-tab gtti-tab" data-tab="unified">Unified Theory</button>
+            </div>
+            <div class="nav-progress">
+                <div class="progress-bar"></div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="content-area">
+            
+            <!-- Introduction Tab -->
+            <section class="tab-content active" id="intro">
+                <div class="hero-section">
+                    <h1 class="hero-title">How Do Things Find Their Paths?</h1>
+                    <p class="hero-subtitle">A journey from planetary orbits to quantum amplitudes</p>
+                </div>
+                
+                <div class="content-grid">
+                    <div class="content-card intro-card">
+                        <div class="card-icon">🌊</div>
+                        <h3>The River's Intelligence</h3>
+                        <p>A river doesn't "know" the path to the sea. Yet it finds it — carving canyons, meandering through valleys, always moving toward lower ground. We understand this: gravity pulls, water flows, resistance shapes the channel.</p>
+                    </div>
+                    
+                    <div class="content-card intro-card">
+                        <div class="card-icon">⚡</div>
+                        <h3>The Lightning's Decision</h3>
+                        <p>In milliseconds, lightning traces a path through miles of atmosphere. It doesn't search sequentially — it branches, explores, and commits. The path emerges from the physics of ionization cascading through air.</p>
+                    </div>
+                    
+                    <div class="content-card intro-card has-image">
+                        <img src="images/slime-mold-pathfinding.png" alt="Slime mold solving a maze" class="card-image">
+                        <h3>The Slime Mold's Solution</h3>
+                        <p>Physarum polycephalum — a brainless organism — solves mazes, recreates highway networks, optimizes paths. It explores everywhere at once, then prunes. Intelligence without a mind.</p>
+                    </div>
+                    
+                    <div class="content-card intro-card">
+                        <div class="card-icon">❓</div>
+                        <h3>The Quantum Mystery</h3>
+                        <p>At the smallest scales, something strange happens. Particles don't find paths — they exist in all paths simultaneously until observed. The HHL algorithm exploits this to solve equations exponentially faster.</p>
+                    </div>
+                </div>
+
+                <div class="journey-preview">
+                    <h2>Our Journey</h2>
+                    <div class="scale-timeline">
+                        <div class="scale-point" data-scale="cosmic">
+                            <div class="scale-marker"></div>
+                            <span>10²⁶ m</span>
+                            <label>Cosmic</label>
+                        </div>
+                        <div class="scale-point" data-scale="earth">
+                            <div class="scale-marker"></div>
+                            <span>10⁷ m</span>
+                            <label>Planetary</label>
+                        </div>
+                        <div class="scale-point" data-scale="surface">
+                            <div class="scale-marker"></div>
+                            <span>10³ m</span>
+                            <label>Surface</label>
+                        </div>
+                        <div class="scale-point" data-scale="human">
+                            <div class="scale-marker"></div>
+                            <span>10⁰ m</span>
+                            <label>Human</label>
+                        </div>
+                        <div class="scale-point" data-scale="molecular">
+                            <div class="scale-marker"></div>
+                            <span>10⁻⁹ m</span>
+                            <label>Molecular</label>
+                        </div>
+                        <div class="scale-point active" data-scale="quantum">
+                            <div class="scale-marker"></div>
+                            <span>10⁻¹⁵ m</span>
+                            <label>Quantum</label>
+                        </div>
+                    </div>
+                    <p class="journey-note">At every scale, we ask: <em>How does the system "know" where to go?</em></p>
+                </div>
+
+                <button class="cta-button" data-goto="cosmic">Begin the Journey →</button>
+            </section>
+
+            <!-- Cosmic Scale Tab -->
+            <section class="tab-content" id="cosmic">
+                <div class="section-header">
+                    <span class="scale-badge">10²⁶ m — Cosmic Scale</span>
+                    <h1>The Celestial Dance</h1>
+                    <p class="section-intro">How do planets, stars, and galaxies find their orbits? They solve an N-body problem continuously — each body responding to every other, finding stable paths through gravitational harmony.</p>
+                </div>
+
+                <div class="visualization-container">
+                    <canvas id="cosmic-canvas"></canvas>
+                    <div class="viz-controls">
+                        <button class="viz-btn" id="cosmic-reset">Reset</button>
+                        <button class="viz-btn" id="cosmic-add">Add Body</button>
+                        <label class="viz-slider">
+                            <span>Speed</span>
+                            <input type="range" id="cosmic-speed" min="0.1" max="3" step="0.1" value="1">
+                        </label>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <h3>The Pathfinding Principle</h3>
+                    <p>Every mass curves spacetime. Bodies follow geodesics — the "straightest possible paths" through curved space. There's no computation, no search. The path <em>is</em> the geometry.</p>
+                    <p class="insight-formula">Einstein's insight: Mass tells space how to curve; space tells mass how to move.</p>
+                </div>
+
+                <!-- Math Explorer: Gravitational Dynamics -->
+                <div class="math-explorer">
+                    <h2>The Mathematics of Orbital Pathfinding</h2>
+                    <div class="equation-display">
+                        <div class="main-equation">
+                            F = G · <span class="fraction"><span class="numerator">m₁ · m₂</span><span class="denominator">r²</span></span> &nbsp;&nbsp;|&nbsp;&nbsp; a = <span class="fraction"><span class="numerator">G · M</span><span class="denominator">r²</span></span> &nbsp;&nbsp;|&nbsp;&nbsp; v<sub>orbital</sub> = √<span class="fraction"><span class="numerator">G · M</span><span class="denominator">r</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-graph">
+                        <canvas id="gravity-math-canvas"></canvas>
+                        <div class="graph-controls">
+                            <div class="slider-group">
+                                <label>Central Mass (M) - Solar masses</label>
+                                <input type="range" id="central-mass" min="0.1" max="5" step="0.1" value="1">
+                                <span id="central-mass-value">1.0</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Orbital Radius (r) - AU</label>
+                                <input type="range" id="orbital-radius" min="0.2" max="5" step="0.1" value="1">
+                                <span id="orbital-radius-value">1.0</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Orbiting Mass (m) - Earth masses</label>
+                                <input type="range" id="orbiting-mass" min="0.1" max="10" step="0.1" value="1">
+                                <span id="orbiting-mass-value">1.0</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="computed-values">
+                        <div class="value-card">
+                            <span class="value-label">Gravitational Force</span>
+                            <span class="value-number" id="force-value">3.54 × 10²² N</span>
+                        </div>
+                        <div class="value-card">
+                            <span class="value-label">Orbital Velocity</span>
+                            <span class="value-number" id="velocity-value">29.8 km/s</span>
+                        </div>
+                        <div class="value-card">
+                            <span class="value-label">Orbital Period</span>
+                            <span class="value-number" id="period-value">1.00 years</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="content-grid two-col">
+                    <div class="content-card">
+                        <h3>Simultaneous Solution</h3>
+                        <p>The solar system doesn't solve orbits one planet at a time. All bodies find their paths simultaneously — a continuous, real-time solution to coupled differential equations.</p>
+                    </div>
+                    <div class="content-card">
+                        <h3>Emergent Stability</h3>
+                        <p>Orbital resonances, Lagrange points, stable configurations — these emerge from the physics. The system "finds" stability through billions of years of gravitational negotiation.</p>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="intro">← Introduction</button>
+                    <button class="nav-btn next" data-goto="earth">Earth Systems →</button>
+                </div>
+            </section>
+
+            <!-- Earth Systems Tab -->
+            <section class="tab-content" id="earth">
+                <div class="section-header">
+                    <span class="scale-badge">10⁷ m — Planetary Scale</span>
+                    <h1>Earth's Flowing Systems</h1>
+                    <p class="section-intro">Zoom into Earth. Watch how atmosphere, ocean, and crust find their paths in synchronized complexity — weather patterns, ocean currents, tectonic flows all solving their equations together.</p>
+                </div>
+
+                <div class="earth-systems-grid">
+                    <div class="system-card" id="atmosphere-card">
+                        <div class="system-visual">
+                            <canvas id="atmosphere-canvas"></canvas>
+                        </div>
+                        <div class="system-info">
+                            <h3>Atmospheric Circulation</h3>
+                            <p>Heated air rises at the equator, flows poleward, cools, descends. Coriolis forces twist these flows into trade winds, westerlies, jet streams. The atmosphere finds circulation cells that balance heat distribution.</p>
+                        </div>
+                    </div>
+
+                    <div class="system-card" id="ocean-card">
+                        <div class="system-visual">
+                            <canvas id="ocean-canvas"></canvas>
+                        </div>
+                        <div class="system-info">
+                            <h3>Ocean Currents</h3>
+                            <p>The thermohaline circulation — a global conveyor belt driven by temperature and salinity differences. Water finds paths that transport heat from equator to poles, taking centuries to complete one cycle.</p>
+                        </div>
+                    </div>
+
+                    <div class="system-card" id="tectonic-card">
+                        <div class="system-visual">
+                            <img src="images/mantle-convection.png" alt="Mantle convection cells" class="system-hero-image">
+                            <canvas id="tectonic-canvas"></canvas>
+                        </div>
+                        <div class="system-info">
+                            <h3>Tectonic Flow</h3>
+                            <p>Mantle convection drives continental drift. Hot rock rises, spreads, cools, sinks — finding circulation patterns that reshape Earth's surface over millions of years.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <h3>Coupled Pathfinding</h3>
+                    <p>These systems don't operate in isolation. Ocean currents affect weather; weather erodes mountains; erosion affects ocean chemistry; ocean chemistry affects climate. Each system's "path" is shaped by all others — a coupled solution emerging continuously.</p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="cosmic">← Cosmic Scale</button>
+                    <button class="nav-btn next" data-goto="surface">Surface Phenomena →</button>
+                </div>
+            </section>
+
+            <!-- Surface Phenomena Tab -->
+            <section class="tab-content" id="surface">
+                <div class="section-header">
+                    <span class="scale-badge">10³ m — Surface Scale</span>
+                    <h1>Where Paths Become Visible</h1>
+                    <p class="section-intro">At this scale, we can see pathfinding happen. Lightning strikes, objects fall, rivers carve, trees grow. Each phenomenon reveals how local rules produce global paths.</p>
+                </div>
+
+                <div class="phenomenon-tabs">
+                    <button class="phenom-tab active" data-phenom="lightning">Lightning</button>
+                    <button class="phenom-tab" data-phenom="falling">Falling Objects</button>
+                    <button class="phenom-tab" data-phenom="rivers">Rivers</button>
+                    <button class="phenom-tab" data-phenom="trees">Trees</button>
+                    <button class="phenom-tab" data-phenom="ecosystems">Ecosystems</button>
+                </div>
+
+                <div class="phenomenon-display">
+                    <!-- Lightning -->
+                    <div class="phenom-content active" id="phenom-lightning">
+                        <div class="phenom-visual">
+                            <img src="images/lightning-branching.png" alt="Lightning branching paths" class="phenom-hero-image">
+                            <canvas id="lightning-canvas"></canvas>
+                            <button class="trigger-btn" id="strike-btn">⚡ Strike</button>
+                        </div>
+                        <div class="phenom-explanation">
+                            <h3>How Lightning Finds Its Path</h3>
+                            <p><strong>The stepped leader:</strong> A column of ionized air extends downward in steps of ~50 meters, branching as it goes. Each step follows the path of least electrical resistance through the air.</p>
+                            <p><strong>The connection:</strong> When a branch gets close to ground, a streamer rises to meet it. The circuit completes, and the return stroke illuminates the chosen path.</p>
+                            <p><strong>The insight:</strong> Lightning explores many paths simultaneously through branching, then "commits" to one. The final path wasn't predetermined — it emerged from parallel exploration.</p>
+                            <div class="parallel-note">
+                                <span class="note-icon">💡</span>
+                                <span>This parallel-then-select pattern will reappear at the quantum scale.</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Falling Objects -->
+                    <div class="phenom-content" id="phenom-falling">
+                        <div class="phenom-visual">
+                            <canvas id="falling-canvas"></canvas>
+                            <button class="trigger-btn" id="drop-btn">Drop Objects</button>
+                        </div>
+                        <div class="phenom-explanation">
+                            <h3>How Falling Objects "Decide"</h3>
+                            <p><strong>The question:</strong> When a tree falls, how does it "decide" which way to go? When a rock tumbles down a slope, what determines its path?</p>
+                            <p><strong>The classical answer:</strong> Initial conditions plus physics. The slight lean, the first gust of wind, the exact shape of the terrain — deterministic chaos from precise causes.</p>
+                            <p><strong>The deeper view:</strong> The object follows the principle of least action — the path that minimizes a specific quantity (action = energy × time) over the trajectory. Nature finds this minimum automatically.</p>
+                        </div>
+                    </div>
+
+                    <!-- Rivers -->
+                    <div class="phenom-content" id="phenom-rivers">
+                        <div class="phenom-visual">
+                            <img src="images/river-delta-fractal.png" alt="River delta fractal branching" class="phenom-hero-image">
+                            <canvas id="river-canvas"></canvas>
+                            <button class="trigger-btn" id="rain-btn">Add Rain</button>
+                        </div>
+                        <div class="phenom-explanation">
+                            <h3>How Rivers Find Their Paths</h3>
+                            <p><strong>The process:</strong> Water flows downhill. That's it. But from this simple rule emerges dendritic networks, oxbow lakes, deltas, and canyons.</p>
+                            <p><strong>Self-organization:</strong> Rivers don't just find paths — they create them. Erosion deepens channels, which attracts more water, which causes more erosion. Positive feedback sculpts the landscape.</p>
+                            <p><strong>Optimal networks:</strong> River networks tend toward configurations that efficiently drain watersheds — not because they "want" efficiency, but because inefficient configurations erode away.</p>
+                        </div>
+                    </div>
+
+                    <!-- Trees -->
+                    <div class="phenom-content" id="phenom-trees">
+                        <div class="phenom-visual">
+                            <canvas id="tree-canvas"></canvas>
+                            <button class="trigger-btn" id="grow-btn">Grow Tree</button>
+                        </div>
+                        <div class="phenom-explanation">
+                            <h3>How Trees Place Their Branches</h3>
+                            <p><strong>The challenge:</strong> A tree must find paths for water (roots), light (branches), and structural support — all simultaneously, all without a brain.</p>
+                            <p><strong>The solution:</strong> Local rules. Roots grow toward moisture. Branches grow toward light. Growth hormones distribute according to simple gradients. The tree's form emerges from molecular-scale decisions.</p>
+                            <p><strong>Fractal efficiency:</strong> The branching patterns of trees (and lungs, and rivers, and blood vessels) follow similar mathematics — space-filling fractals that maximize surface area for exchange.</p>
+                        </div>
+                    </div>
+
+                    <!-- Ecosystems -->
+                    <div class="phenom-content" id="phenom-ecosystems">
+                        <div class="phenom-visual">
+                            <canvas id="ecosystem-canvas"></canvas>
+                            <div class="ecosystem-controls">
+                                <button class="trigger-btn" id="eco-reset">Reset</button>
+                            </div>
+                        </div>
+                        <div class="phenom-explanation">
+                            <h3>How Ecosystems Find Balance</h3>
+                            <p><strong>The dance:</strong> Predators and prey, competition and cooperation, energy flowing through food webs. Each species "finds its path" — its niche — through evolutionary time.</p>
+                            <p><strong>Dynamic equilibrium:</strong> Ecosystems don't reach static balance. They oscillate, adapt, recover from disturbance. Stability emerges from the interplay of countless pathfinding agents.</p>
+                            <p><strong>The parallel:</strong> Like the solar system, ecosystems solve coupled equations simultaneously. Every species' path depends on every other's.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="earth">← Earth Systems</button>
+                    <button class="nav-btn next" data-goto="human">Human & Algorithmic →</button>
+                </div>
+            </section>
+
+            <!-- Human & Algorithmic Tab -->
+            <section class="tab-content" id="human">
+                <div class="section-header">
+                    <span class="scale-badge">10⁰ m — Human Scale</span>
+                    <h1>How We Find Our Paths</h1>
+                    <p class="section-intro">We navigate cities, make decisions, plan routes. And we've taught machines to pathfind too. How do our algorithms compare to nature's methods?</p>
+                </div>
+
+                <div class="comparison-grid">
+                    <div class="comparison-section">
+                        <h2>Human Navigation</h2>
+                        <div class="human-nav-visual">
+                            <canvas id="human-nav-canvas"></canvas>
+                        </div>
+                        <div class="comparison-points">
+                            <div class="point">
+                                <h4>Cognitive Maps</h4>
+                                <p>We build mental models of space — landmarks, routes, regions. Our hippocampus contains "place cells" that fire for specific locations.</p>
+                            </div>
+                            <div class="point">
+                                <h4>Heuristic Search</h4>
+                                <p>We don't explore all paths. We use shortcuts: "head generally toward the goal," "prefer familiar routes," "avoid known obstacles."</p>
+                            </div>
+                            <div class="point">
+                                <h4>Satisficing</h4>
+                                <p>We rarely find optimal paths. We find "good enough" paths quickly — trading optimality for speed.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="comparison-section">
+                        <h2>Algorithmic Pathfinding</h2>
+                        <div class="algo-visual">
+                            <canvas id="algo-canvas"></canvas>
+                            <div class="algo-controls">
+                                <select id="algo-select">
+                                    <option value="dijkstra">Dijkstra's Algorithm</option>
+                                    <option value="astar">A* Search</option>
+                                    <option value="bfs">Breadth-First Search</option>
+                                </select>
+                                <button class="trigger-btn" id="algo-run">Run</button>
+                                <button class="trigger-btn" id="algo-reset">Reset</button>
+                            </div>
+                        </div>
+                        <div class="comparison-points">
+                            <div class="point">
+                                <h4>Dijkstra's Algorithm</h4>
+                                <p>Explores outward from start, always expanding the closest unvisited node. Guaranteed optimal but explores many unnecessary paths.</p>
+                            </div>
+                            <div class="point">
+                                <h4>A* Search</h4>
+                                <p>Uses a heuristic (estimated distance to goal) to prioritize exploration. Faster than Dijkstra while still optimal if heuristic is good.</p>
+                            </div>
+                            <div class="point">
+                                <h4>Real-World Systems</h4>
+                                <p>GPS navigation, game AI, robot motion planning — all use variations of these algorithms, optimized for specific constraints.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="insight-box">
+                    <h3>The Classical Limitation</h3>
+                    <p>All classical pathfinding — biological and digital — shares a constraint: paths must be explored sequentially or through limited parallelism. Even the fastest algorithms scale with the size of the search space.</p>
+                    <p>What if we could explore <em>all</em> paths simultaneously?</p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="surface">← Surface Phenomena</button>
+                    <button class="nav-btn next" data-goto="molecular">Molecular Scale →</button>
+                </div>
+            </section>
+
+            <!-- Molecular Scale Tab -->
+            <section class="tab-content" id="molecular">
+                <div class="section-header">
+                    <span class="scale-badge">10⁻⁹ m — Molecular Scale</span>
+                    <h1>Pathfinding in the Molecular World</h1>
+                    <p class="section-intro">We've zoomed in a billion-fold. Here, proteins fold, enzymes find substrates, signals propagate through cellular networks. The pathfinding looks familiar — but watch closely.</p>
+                </div>
+
+                <div class="molecular-demos">
+                    <div class="mol-demo">
+                        <div class="mol-visual">
+                            <canvas id="protein-canvas"></canvas>
+                        </div>
+                        <div class="mol-info">
+                            <h3>Protein Folding</h3>
+                            <p>A protein chain finds its 3D structure from astronomical possibilities. Levinthal's paradox: random search would take longer than the age of the universe, yet proteins fold in milliseconds.</p>
+                            <p><strong>The solution:</strong> Energy landscapes. The protein doesn't search randomly — it "rolls downhill" on an energy surface, finding low-energy configurations through thermal motion.</p>
+                            <p class="still-classical">Still classical: local interactions, thermodynamic gradients, no superposition required.</p>
+                        </div>
+                    </div>
+
+                    <div class="mol-demo">
+                        <div class="mol-visual">
+                            <canvas id="enzyme-canvas"></canvas>
+                        </div>
+                        <div class="mol-info">
+                            <h3>Enzyme-Substrate Binding</h3>
+                            <p>An enzyme finds its substrate in the cellular soup — a needle in a molecular haystack. How?</p>
+                            <p><strong>The solution:</strong> Diffusion plus recognition. Random thermal motion brings molecules together; shape complementarity and charge distribution determine binding. Millions of collisions, rare successful locks.</p>
+                            <p class="still-classical">Still classical: probability, diffusion, chemical affinity.</p>
+                        </div>
+                    </div>
+
+                    <div class="mol-demo">
+                        <div class="mol-visual">
+                            <canvas id="signaling-canvas"></canvas>
+                        </div>
+                        <div class="mol-info">
+                            <h3>Cellular Signaling Networks</h3>
+                            <p>Signals cascade through protein networks — kinases activating kinases, feedback loops, signal amplification. The cell "computes" responses to stimuli.</p>
+                            <p><strong>The pathfinding:</strong> Signals flow through the network like water through channels. Paths emerge from network topology and reaction kinetics.</p>
+                            <p class="still-classical">Still classical: reaction rates, concentrations, diffusion.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="transition-teaser">
+                    <h2>Something Is About to Change</h2>
+                    <p>At the molecular scale, pathfinding still follows classical intuitions. Energy gradients, thermal motion, probability — all concepts that would make sense to a 19th-century physicist.</p>
+                    <p>But we're about to cross a threshold. As we zoom in further — to electrons, to photons, to the fundamental carriers of information — the rules change.</p>
+                    <div class="teaser-visual">
+                        <canvas id="transition-canvas"></canvas>
+                    </div>
+                    <p class="threshold-warning">At the quantum scale, paths don't get found. They get <em>superposed</em>.</p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="human">← Human & Algorithmic</button>
+                    <button class="nav-btn next" data-goto="quantum">The Quantum Threshold →</button>
+                </div>
+            </section>
+
+            <!-- Quantum Threshold Tab -->
+            <section class="tab-content" id="quantum">
+                <div class="section-header quantum-header">
+                    <span class="scale-badge quantum-badge">10⁻¹⁵ m — Quantum Scale</span>
+                    <h1>The Quantum Threshold</h1>
+                    <p class="section-intro">Slow down time. Zoom past atoms, past nuclei, to the scale where quantum mechanics dominates. Here, pathfinding transforms into something alien — and powerful.</p>
+                </div>
+
+                <div class="quantum-revelation">
+                    <div class="classical-vs-quantum">
+                        <div class="paradigm classical-paradigm">
+                            <h3>Classical Pathfinding</h3>
+                            <canvas id="classical-path-canvas"></canvas>
+                            <ul>
+                                <li>Object takes <strong>one path</strong></li>
+                                <li>Path determined by initial conditions</li>
+                                <li>Exploration is sequential or parallel (limited)</li>
+                                <li>We can track the object's position</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="paradigm-divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-text">The Threshold</span>
+                            <div class="divider-line"></div>
+                        </div>
+
+                        <div class="paradigm quantum-paradigm">
+                            <h3>Quantum Pathfinding</h3>
+                            <img src="images/quantum-superposition.png" alt="Quantum superposition" class="paradigm-image">
+                            <canvas id="quantum-path-canvas"></canvas>
+                            <ul>
+                                <li>Particle exists in <strong>all paths simultaneously</strong></li>
+                                <li>Paths interfere: amplitudes add and cancel</li>
+                                <li>Observation collapses superposition to one outcome</li>
+                                <li>The "answer" emerges from interference patterns</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="double-slit-demo">
+                    <h2>The Double Slit Experiment</h2>
+                    <p class="demo-intro">The iconic demonstration of quantum weirdness. A single particle, two possible paths, and an interference pattern that defies classical explanation.</p>
+                    
+                    <div class="slit-visualization">
+                        <canvas id="double-slit-canvas"></canvas>
+                        <div class="slit-controls">
+                            <button class="trigger-btn" id="fire-particle">Fire Particle</button>
+                            <button class="trigger-btn" id="fire-many">Fire 1000</button>
+                            <button class="trigger-btn" id="slit-reset">Reset</button>
+                            <label class="viz-checkbox">
+                                <input type="checkbox" id="which-path">
+                                <span>Detect which slit (destroys interference)</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="slit-explanation">
+                        <p><strong>The mystery:</strong> Fire particles one at a time. Each hits the screen at a single point. But over many particles, an interference pattern emerges — as if each particle went through both slits and interfered with itself.</p>
+                        <p><strong>The resolution:</strong> Quantum mechanics says the particle's position is not determined until measured. Before detection, it exists as a wave of probability amplitudes traveling through both slits. The amplitudes interfere, and the interference pattern determines where particles are likely to land.</p>
+                    </div>
+                </div>
+
+                <div class="feynman-insight">
+                    <h2>Feynman's Path Integral</h2>
+                    <div class="feynman-visual">
+                        <img src="images/feynman-paths.png" alt="Feynman path integral visualization" class="feynman-image">
+                        <canvas id="feynman-canvas"></canvas>
+                    </div>
+                    <div class="feynman-text">
+                        <p>Richard Feynman reformulated quantum mechanics with a stunning idea: to calculate the probability of a particle going from A to B, sum over <em>all possible paths</em> — not just the classical one.</p>
+                        <p>Each path contributes a complex amplitude based on its "action" (roughly, energy × time). The amplitudes interfere:</p>
+                        <ul>
+                            <li>Paths near the classical trajectory have similar phases → constructive interference</li>
+                            <li>Wild paths have random phases → cancel out</li>
+                        </ul>
+                        <p>The classical path emerges as the "brightest" region where amplitudes constructively interfere. Quantum mechanics doesn't contradict classical physics — it contains it.</p>
+                    </div>
+                </div>
+
+                <div class="insight-box quantum-insight">
+                    <h3>The Computational Implication</h3>
+                    <p>If a quantum system naturally explores all paths simultaneously and computes their interference... can we harness this for computation?</p>
+                    <p>This is the promise of quantum computing. The HHL algorithm exploits superposition and interference to solve systems of linear equations exponentially faster than classical methods.</p>
+                    <p class="next-tease">Let's see how.</p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="molecular">← Molecular Scale</button>
+                    <button class="nav-btn next" data-goto="hhl">HHL Deep Dive →</button>
+                </div>
+            </section>
+
+            <!-- HHL Deep Dive Tab -->
+            <section class="tab-content" id="hhl">
+                <div class="section-header">
+                    <span class="scale-badge hhl-badge">The HHL Algorithm</span>
+                    <h1>Quantum Pathfinding for Linear Systems</h1>
+                    <p class="section-intro">The Harrow-Hassidim-Lloyd algorithm solves Ax = b exponentially faster than classical methods. Here's how it works, through three key concepts.</p>
+                </div>
+
+                <div class="hhl-overview">
+                    <div class="overview-card">
+                        <h3>The Problem</h3>
+                        <p>Solve a system of N linear equations: <strong>Ax = b</strong></p>
+                        <p>Classical best: O(N√κ) operations</p>
+                        <p>HHL: O(log(N)κ²) operations</p>
+                        <p class="speedup">Exponential speedup in N!</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>The Catch</h3>
+                        <p>You don't get x directly. You get a quantum state |x⟩ whose amplitudes encode the solution.</p>
+                        <p>Good for: computing properties of x (like xᵀMx)</p>
+                        <p>Bad for: printing out all N values of x</p>
+                    </div>
+                    <div class="overview-card">
+                        <h3>The Requirements</h3>
+                        <ul>
+                            <li>A must be sparse (few non-zero entries per row)</li>
+                            <li>A must be well-conditioned (κ not too large)</li>
+                            <li>|b⟩ must be efficiently preparable</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="hhl-concepts">
+                    <!-- Concept 1: Amplitude Interference -->
+                    <div class="hhl-concept" id="concept-interference">
+                        <div class="concept-header">
+                            <span class="concept-number">1</span>
+                            <h2>Amplitude Interference</h2>
+                            <p class="concept-subtitle">How quantum paths combine to select solutions</p>
+                        </div>
+                        
+                        <div class="concept-visual">
+                            <canvas id="interference-canvas"></canvas>
+                            <div class="interference-controls">
+                                <label>
+                                    <span>Phase difference:</span>
+                                    <input type="range" id="phase-slider" min="0" max="360" value="0">
+                                    <span id="phase-value">0°</span>
+                                </label>
+                                <button class="trigger-btn" id="interference-animate">Animate</button>
+                            </div>
+                        </div>
+
+                        <div class="concept-explanation">
+                            <p>In quantum mechanics, states have <strong>amplitudes</strong> — complex numbers that can add constructively or destructively.</p>
+                            <p>When two paths lead to the same outcome:</p>
+                            <ul>
+                                <li><strong>Same phase:</strong> Amplitudes add → higher probability</li>
+                                <li><strong>Opposite phase:</strong> Amplitudes cancel → lower probability</li>
+                            </ul>
+                            <p>The HHL algorithm engineers these interferences so that the <strong>correct solution</strong> gets amplified and <strong>wrong answers</strong> get suppressed.</p>
+                        </div>
+                    </div>
+
+                    <!-- Concept 2: Slime Mold Exploration -->
+                    <div class="hhl-concept" id="concept-exploration">
+                        <div class="concept-header">
+                            <span class="concept-number">2</span>
+                            <h2>Parallel Exploration</h2>
+                            <p class="concept-subtitle">The slime mold strategy at quantum scale</p>
+                        </div>
+
+                        <div class="concept-visual split-visual">
+                            <div class="visual-half">
+                                <h4>Slime Mold (Classical)</h4>
+                                <canvas id="slime-canvas"></canvas>
+                                <button class="trigger-btn" id="slime-start">Start Exploration</button>
+                            </div>
+                            <div class="visual-half">
+                                <h4>Quantum Superposition</h4>
+                                <canvas id="superposition-canvas"></canvas>
+                                <button class="trigger-btn" id="superposition-start">Start Superposition</button>
+                            </div>
+                        </div>
+
+                        <div class="concept-explanation">
+                            <p>Remember the slime mold? It explores all paths simultaneously, then prunes inefficient ones through resource flow.</p>
+                            <p>Quantum computation does something similar:</p>
+                            <table class="comparison-table">
+                                <tr>
+                                    <th>Slime Mold</th>
+                                    <th>Quantum Algorithm</th>
+                                </tr>
+                                <tr>
+                                    <td>Physical network explores all paths</td>
+                                    <td>Superposition encodes all possibilities</td>
+                                </tr>
+                                <tr>
+                                    <td>Resource flow selects efficient paths</td>
+                                    <td>Amplitude interference selects solutions</td>
+                                </tr>
+                                <tr>
+                                    <td>Inefficient paths starve</td>
+                                    <td>Wrong answers destructively interfere</td>
+                                </tr>
+                                <tr>
+                                    <td>Final network is optimized</td>
+                                    <td>Measurement yields answer</td>
+                                </tr>
+                            </table>
+                            <p>The difference: quantum exploration is <strong>exponentially more parallel</strong>. N qubits can represent 2ᴺ states simultaneously.</p>
+                        </div>
+                    </div>
+
+                    <!-- Concept 3: Eigenvalue Inversion -->
+                    <div class="hhl-concept" id="concept-inversion">
+                        <div class="concept-header">
+                            <span class="concept-number">3</span>
+                            <h2>Eigenvalue Inversion</h2>
+                            <p class="concept-subtitle">The heart of the algorithm</p>
+                        </div>
+
+                        <div class="concept-visual">
+                            <canvas id="eigenvalue-canvas"></canvas>
+                            <div class="eigenvalue-controls">
+                                <button class="trigger-btn" id="eigen-step1">1. Prepare |b⟩</button>
+                                <button class="trigger-btn" id="eigen-step2">2. Phase Estimation</button>
+                                <button class="trigger-btn" id="eigen-step3">3. Rotate Ancilla</button>
+                                <button class="trigger-btn" id="eigen-step4">4. Measure</button>
+                                <button class="trigger-btn" id="eigen-reset">Reset</button>
+                            </div>
+                        </div>
+
+                        <div class="concept-explanation">
+                            <p>To solve Ax = b, we need x = A⁻¹b. This means inverting A. Here's how HHL does it:</p>
+                            
+                            <div class="step-breakdown">
+                                <div class="step">
+                                    <span class="step-num">1</span>
+                                    <div class="step-content">
+                                        <h4>Encode b as quantum state |b⟩</h4>
+                                        <p>The vector b becomes the amplitudes of a quantum state.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-num">2</span>
+                                    <div class="step-content">
+                                        <h4>Quantum Phase Estimation</h4>
+                                        <p>Decompose |b⟩ into eigenvectors of A and extract eigenvalues λⱼ into a register.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-num">3</span>
+                                    <div class="step-content">
+                                        <h4>Rotate ancilla qubit</h4>
+                                        <p>Rotate an extra qubit by an angle proportional to 1/λⱼ. This embeds the inverse into amplitudes.</p>
+                                    </div>
+                                </div>
+                                <div class="step">
+                                    <span class="step-num">4</span>
+                                    <div class="step-content">
+                                        <h4>Measure and post-select</h4>
+                                        <p>Measure the ancilla. If we get "success," the remaining state is proportional to |x⟩ = A⁻¹|b⟩.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <p class="key-insight">The key insight: quantum mechanics lets us perform operations on <strong>all eigenvalues simultaneously</strong> because they exist in superposition. Classical algorithms must process them one at a time.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hhl-summary">
+                    <h2>Bringing It All Together</h2>
+                    <div class="summary-flow">
+                        <div class="flow-item">
+                            <div class="flow-icon">🌍</div>
+                            <p>Classical systems find paths through local rules propagating globally</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-item">
+                            <div class="flow-icon">🧫</div>
+                            <p>Biological systems explore in parallel, select through resource flow</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-item">
+                            <div class="flow-icon">⚛️</div>
+                            <p>Quantum systems exist in all paths at once, select through interference</p>
+                        </div>
+                        <div class="flow-arrow">→</div>
+                        <div class="flow-item">
+                            <div class="flow-icon">💻</div>
+                            <p>HHL harnesses quantum pathfinding to solve linear systems exponentially faster</p>
+                        </div>
+                    </div>
+                    
+                    <p class="final-thought">From rivers to lightning to slime molds to quantum algorithms — pathfinding is universal. The methods differ, but the pattern persists: <strong>explore possibilities, then select through some optimization principle</strong>. At the quantum scale, we've found a way to explore exponentially more possibilities simultaneously. This is the promise of quantum computing.</p>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="quantum">← Quantum Threshold</button>
+                    <button class="nav-btn next" data-goto="homogenization">Homogenization Theory →</button>
+                </div>
+            </section>
+
+            <!-- ==========================================
+                 GTTI THEORY TABS
+                 ========================================== -->
+
+            <!-- Homogenization Theory Tab -->
+            <section class="tab-content" id="homogenization">
+                <div class="section-header">
+                    <span class="scale-badge gtti-badge">GTTI Framework — Part 1</span>
+                    <h1>Homogenization & The Solvability Threshold</h1>
+                    <p class="section-intro">When does continuous evolution break down? The σ threshold defines the boundary between smooth dynamics and forced discrete intervention.</p>
+                </div>
+
+                <div class="theory-intro">
+                    <p>In operator-theoretic homogenization, we study how rapid discrete events can be "averaged out" into continuous dynamics. But there's a threshold — when stress accumulates faster than capacity grows, the system demands a <strong>topological intervention</strong>.</p>
+                </div>
+
+                <div class="math-explorer">
+                    <h2>The Solvability Number σ(t)</h2>
+                    <div class="equation-display">
+                        <div class="main-equation">
+                            σ(t) = <span class="fraction"><span class="numerator">Rate of History Accumulation</span><span class="denominator">Rate of Capacity Growth</span></span> = <span class="fraction"><span class="numerator">ṁ<sub>*</sub>(t)</span><span class="denominator">Ċ(t)</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-graph">
+                        <canvas id="sigma-canvas"></canvas>
+                        <div class="graph-controls">
+                            <div class="slider-group">
+                                <label>History Accumulation Rate (ṁ<sub>*</sub>)</label>
+                                <input type="range" id="history-rate" min="0.1" max="2" step="0.1" value="0.8">
+                                <span id="history-rate-value">0.8</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Capacity Growth Rate (Ċ)</label>
+                                <input type="range" id="capacity-rate" min="0.1" max="2" step="0.1" value="1">
+                                <span id="capacity-rate-value">1.0</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Time Scale</label>
+                                <input type="range" id="time-scale" min="1" max="10" step="1" value="5">
+                                <span id="time-scale-value">5</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="regime-indicators">
+                        <div class="regime regime-continuous">
+                            <h4>σ &lt; 1: Continuous Regime</h4>
+                            <p>System evolves smoothly. Discrete events homogenize into effective constitutive law. Like many small riverbed adjustments averaging into a smooth flow.</p>
+                        </div>
+                        <div class="regime regime-critical">
+                            <h4>σ → 1: Critical Threshold</h4>
+                            <p>Stress approaches capacity. System teeters on edge — small perturbations can trigger discrete "Aleph events" (topological surgery).</p>
+                        </div>
+                        <div class="regime regime-discrete">
+                            <h4>σ &gt; 1: Forced Intervention</h4>
+                            <p>Continuous evolution impossible. System demands discrete restructuring — adding topology, resetting local constraints.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="math-explorer">
+                    <h2>Fast-Impulse Scaling (ε → 0)</h2>
+                    <div class="equation-display">
+                        <div class="main-equation">
+                            lim<sub>ε→0</sub> ∑<sub>k</sub> A<sub>k</sub>δ(t - kε) → Effective Continuous Law
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-graph">
+                        <canvas id="epsilon-canvas"></canvas>
+                        <div class="graph-controls">
+                            <div class="slider-group">
+                                <label>Impulse Interval (ε)</label>
+                                <input type="range" id="epsilon-value" min="0.01" max="1" step="0.01" value="0.5">
+                                <span id="epsilon-display">0.50</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Number of Impulses</label>
+                                <input type="range" id="num-impulses" min="5" max="100" step="5" value="20">
+                                <span id="impulses-display">20</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="insight-box">
+                        <h3>The Homogenization Insight</h3>
+                        <p>As discrete events become infinitely rapid (ε → 0), they blur into a continuous field. This is how molecular collisions become fluid viscosity, how neural spikes become smooth thoughts, how quantum measurements might become classical certainty.</p>
+                    </div>
+                </div>
+
+                <div class="aleph-section">
+                    <h2>Aleph Events: Topological Surgery</h2>
+                    <div class="aleph-visualization">
+                        <canvas id="aleph-canvas"></canvas>
+                        <div class="aleph-controls">
+                            <button class="trigger-btn" id="trigger-aleph">Trigger Aleph Event</button>
+                            <button class="trigger-btn" id="reset-aleph">Reset</button>
+                        </div>
+                    </div>
+                    <div class="aleph-explanation">
+                        <p>When σ → 1, the system cannot continue its current trajectory. An <strong>Aleph event</strong> represents a discrete topological addition — like adding a new edge to a graph, a new handle to a surface, or a new dimension to the state space.</p>
+                        <p>Each Aleph event:</p>
+                        <ul>
+                            <li>Resolves local stress buildup</li>
+                            <li>Adds to global "Met" (accumulated history/scar)</li>
+                            <li>Expands system capacity C(g)</li>
+                            <li>Resets σ below threshold</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="hhl">← HHL Algorithm</button>
+                    <button class="nav-btn next" data-goto="circuit-mapping">Circuit Mapping →</button>
+                </div>
+            </section>
+
+            <!-- Quantum Circuit Mapping Tab -->
+            <section class="tab-content" id="circuit-mapping">
+                <div class="section-header">
+                    <span class="scale-badge gtti-badge">GTTI Framework — Part 2</span>
+                    <h1>Mapping to Quantum Circuit Complexity</h1>
+                    <p class="section-intro">The homogenization framework maps remarkably onto quantum computing — where gates are Aleph events and circuit depth is accumulated Met.</p>
+                </div>
+
+                <div class="mapping-table-section">
+                    <h2>The Correspondence</h2>
+                    <table class="mapping-table">
+                        <thead>
+                            <tr>
+                                <th>Continuum Concept (GTTI)</th>
+                                <th>Quantum Circuit Analog</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Stress Accumulation (ṁ<sub>*</sub>)</td>
+                                <td>Entanglement/phase complexity growth</td>
+                            </tr>
+                            <tr>
+                                <td>Solvability Number (σ)</td>
+                                <td>Ratio of complexity to qubit coherence</td>
+                            </tr>
+                            <tr>
+                                <td>Homogenization (ε → 0)</td>
+                                <td>Quantum Zeno Effect (continuous measurement)</td>
+                            </tr>
+                            <tr>
+                                <td>Aleph Event</td>
+                                <td>Quantum Gate / Measurement</td>
+                            </tr>
+                            <tr>
+                                <td>Met Accumulation (M)</td>
+                                <td>Circuit Depth / Computational Cost</td>
+                            </tr>
+                            <tr>
+                                <td>Capacity C(g) ~ φ<sup>g</sup></td>
+                                <td>Hilbert Space Dimension ~ 2<sup>n</sup></td>
+                            </tr>
+                            <tr class="highlight-row">
+                                <td>Rigidity Death (M → ∞)</td>
+                                <td>Decoherence / Computational Hardness Limit</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="math-explorer">
+                    <h2>Circuit Depth as Met Accumulation</h2>
+                    <div class="interactive-graph">
+                        <canvas id="circuit-depth-canvas"></canvas>
+                        <div class="graph-controls">
+                            <div class="slider-group">
+                                <label>Number of Qubits (n)</label>
+                                <input type="range" id="num-qubits" min="2" max="10" step="1" value="4">
+                                <span id="qubits-display">4</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Gate Density</label>
+                                <input type="range" id="gate-density" min="0.1" max="1" step="0.1" value="0.5">
+                                <span id="density-display">0.5</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Decoherence Rate</label>
+                                <input type="range" id="decoherence" min="0.01" max="0.2" step="0.01" value="0.05">
+                                <span id="decoherence-display">0.05</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="equation-display">
+                        <div class="main-equation">
+                            M(t) = ∑<sub>gates</sub> 1 &nbsp;&nbsp;|&nbsp;&nbsp; C(n) = 2<sup>n</sup> &nbsp;&nbsp;|&nbsp;&nbsp; σ<sub>circuit</sub> = M / (C · τ<sub>coherence</sub>)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="phase-regime-section">
+                    <h2>Phase Regimes in Quantum Circuits</h2>
+                    <div class="three-d-visualization">
+                        <canvas id="phase-regime-canvas"></canvas>
+                        <div class="viz-legend">
+                            <div class="legend-item"><span class="legend-color unitary"></span> Unitary (σ &lt; 1)</div>
+                            <div class="legend-item"><span class="legend-color critical"></span> Critical (σ ≈ 1)</div>
+                            <div class="legend-item"><span class="legend-color collapse"></span> Collapse Required (σ &gt; 1)</div>
+                        </div>
+                    </div>
+                    
+                    <div class="content-grid two-col">
+                        <div class="content-card">
+                            <h3>Below Threshold (σ &lt; 1)</h3>
+                            <p>Quantum evolution remains unitary. The wavefunction evolves smoothly according to Schrödinger equation. This is "easy" quantum computation — reversible, coherent.</p>
+                        </div>
+                        <div class="content-card">
+                            <h3>At Threshold (σ → 1)</h3>
+                            <p>Phase congestion builds. Entanglement saturates available structure. A gate (Aleph event) must be applied — collapsing local superpositions but enabling continued global evolution.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="zeno-section">
+                    <h2>The Quantum Zeno Connection</h2>
+                    <div class="interactive-graph">
+                        <canvas id="zeno-canvas"></canvas>
+                        <div class="graph-controls">
+                            <div class="slider-group">
+                                <label>Measurement Frequency</label>
+                                <input type="range" id="zeno-freq" min="1" max="50" step="1" value="10">
+                                <span id="zeno-freq-display">10</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="insight-box">
+                        <h3>Zeno as Homogenization Limit</h3>
+                        <p>The Quantum Zeno Effect — where frequent measurements freeze evolution — is the quantum analog of ε → 0 homogenization. Infinitely rapid "observations" average into an effective projection, constraining the system to a subspace.</p>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="homogenization">← Homogenization</button>
+                    <button class="nav-btn next" data-goto="unified">Unified Framework →</button>
+                </div>
+            </section>
+
+            <!-- Unified Theory Tab -->
+            <section class="tab-content" id="unified">
+                <div class="section-header">
+                    <span class="scale-badge gtti-badge">GTTI Framework — Part 3</span>
+                    <h1>The Unified Framework</h1>
+                    <p class="section-intro">Bringing together pathfinding across scales, homogenization thresholds, and quantum circuit limits into a single coherent picture.</p>
+                </div>
+
+                <div class="mystery-solution">
+                    <h2>The Solution to the Mystery</h2>
+                    <div class="solution-statement">
+                        <p class="big-idea">The homogenization threshold σ → 1 maps directly to quantum circuit complexity bounds:</p>
+                        <ul class="solution-points">
+                            <li><strong>Below threshold (σ &lt; 1):</strong> Evolution is unitary, computation is "easy"</li>
+                            <li><strong>At threshold (σ → 1):</strong> Stress demands a gate/measurement — discrete intervention</li>
+                            <li><strong>Met accumulation:</strong> Each gate adds to circuit depth, closing spectral gap</li>
+                            <li><strong>Ultimate limit:</strong> When M → ∞, λ₀ → 0 — "Rigidity Death"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="math-explorer">
+                    <h2>The Spectral Gap & Rigidity Death</h2>
+                    <div class="equation-display">
+                        <div class="main-equation">
+                            λ₀(M) = λ₀(0) · e<sup>-αM</sup> &nbsp;&nbsp;→&nbsp;&nbsp; As M → ∞, λ₀ → 0
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-graph">
+                        <canvas id="spectral-gap-canvas"></canvas>
+                        <div class="graph-controls">
+                            <div class="slider-group">
+                                <label>Initial Spectral Gap (λ₀)</label>
+                                <input type="range" id="initial-gap" min="0.5" max="2" step="0.1" value="1">
+                                <span id="gap-display">1.0</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Rigidity Rate (α)</label>
+                                <input type="range" id="rigidity-rate" min="0.01" max="0.2" step="0.01" value="0.05">
+                                <span id="rigidity-display">0.05</span>
+                            </div>
+                            <div class="slider-group">
+                                <label>Current Met (M)</label>
+                                <input type="range" id="current-met" min="0" max="100" step="1" value="20">
+                                <span id="met-display">20</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="death-visualization">
+                        <canvas id="rigidity-death-canvas"></canvas>
+                    </div>
+                    
+                    <div class="insight-box quantum-insight">
+                        <h3>Computational Hardness as Rigidity Death</h3>
+                        <p>When the spectral gap closes (λ₀ → 0), transport halts. In quantum computing, this manifests as:</p>
+                        <ul>
+                            <li>Decoherence overwhelming computation</li>
+                            <li>Circuit depth exceeding coherence time</li>
+                            <li>Algorithms hitting exponential hardness walls</li>
+                        </ul>
+                        <p>The HHL algorithm's success depends on staying <em>below</em> this threshold — maintaining σ &lt; 1 throughout computation.</p>
+                    </div>
+                </div>
+
+                <div class="unified-diagram">
+                    <h2>The Complete Picture</h2>
+                    <div class="diagram-container">
+                        <canvas id="unified-canvas"></canvas>
+                    </div>
+                    
+                    <div class="scale-connections">
+                        <div class="connection-card">
+                            <h4>🌍 Macroscopic</h4>
+                            <p>Rivers, lightning, ecosystems — continuous dynamics with occasional discrete restructuring (floods, strikes, extinctions)</p>
+                        </div>
+                        <div class="connection-arrow">↔</div>
+                        <div class="connection-card">
+                            <h4>🧬 Mesoscopic</h4>
+                            <p>Molecular machines, neural networks — rapid discrete events homogenizing into effective continuous behavior</p>
+                        </div>
+                        <div class="connection-arrow">↔</div>
+                        <div class="connection-card">
+                            <h4>⚛️ Quantum</h4>
+                            <p>Unitary evolution punctuated by measurements — the σ threshold determining when collapse is required</p>
+                        </div>
+                        <div class="connection-arrow">↔</div>
+                        <div class="connection-card">
+                            <h4>💻 Computational</h4>
+                            <p>Circuit depth bounds, complexity thresholds — Met accumulation closing the spectral gap</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="final-synthesis">
+                    <h2>The Deep Pattern</h2>
+                    <div class="synthesis-content">
+                        <p class="synthesis-statement">Across all scales, pathfinding follows the same meta-pattern:</p>
+                        <ol class="synthesis-steps">
+                            <li><strong>Explore:</strong> System samples possibilities (continuously or in superposition)</li>
+                            <li><strong>Accumulate:</strong> History/stress/complexity builds (σ increases)</li>
+                            <li><strong>Threshold:</strong> When σ → 1, continuous evolution fails</li>
+                            <li><strong>Intervene:</strong> Discrete event (Aleph/gate/collapse) resets local stress</li>
+                            <li><strong>Scar:</strong> Met increases, capacity may expand, global structure changes</li>
+                            <li><strong>Repeat:</strong> Until rigidity death or solution found</li>
+                        </ol>
+                        <p class="synthesis-conclusion">The HHL algorithm succeeds because it engineers this cycle to converge on solutions before hitting the rigidity wall. Quantum advantage comes from the exponentially larger exploration space (2<sup>n</sup> vs n) combined with interference-based selection — all while keeping σ &lt; 1.</p>
+                    </div>
+                </div>
+
+                <div class="nav-buttons">
+                    <button class="nav-btn prev" data-goto="circuit-mapping">← Circuit Mapping</button>
+                    <button class="nav-btn" data-goto="intro">↺ Start Over</button>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>An exploration of pathfinding across scales — from cosmic orbits to quantum amplitudes</p>
+            <p class="footer-credit">Inspired by the HHL Algorithm | <a href="https://en.wikipedia.org/wiki/HHL_algorithm" target="_blank">Wikipedia</a></p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

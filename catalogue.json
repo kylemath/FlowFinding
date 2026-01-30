@@ -1,0 +1,11 @@
+{
+  "id": "FlowFinding",
+  "title": "FlowFinding",
+  "oneLiner": "A set of web demos to study concepts around finding and quantum collapse",
+  "demoUrl": "https://kylemath.github.io/FlowFinding",
+  "screenshot": "https://raw.githubusercontent.com/kylemath/FlowFinding/main/screenshot.png",
+  "kind": "project",
+  "categories": [],
+  "tags": [],
+  "status": "published"
+}
