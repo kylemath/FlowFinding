@@ -468,6 +468,18 @@ body {
     margin-bottom: var(--spacing-md);
 }
 
+.theory-hero-image {
+    margin-bottom: var(--spacing-xl);
+}
+
+.section-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg), 0 0 40px rgba(124, 58, 237, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
 .viz-controls {
     display: flex;
     align-items: center;
