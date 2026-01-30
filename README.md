@@ -1,5 +1,7 @@
 # Pathfinding Across Scales — From Cosmos to Quantum
 
+🚀 **[Live Demo](https://kylemath.github.io/FlowFinding)** 🚀
+
 An interactive educational web application that explores how systems find their paths across vastly different scales, from planetary orbits to quantum algorithms.
 
 ## Overview
