@@ -120,6 +120,7 @@
                 </div>
 
                 <div class="visualization-container">
+                    <img src="images/cosmic-orbits.png" alt="Celestial mechanics and orbital pathfinding" class="viz-hero-image">
                     <canvas id="cosmic-canvas"></canvas>
                     <div class="viz-controls">
                         <button class="viz-btn" id="cosmic-reset">Reset</button>
@@ -211,6 +212,7 @@
                 <div class="earth-systems-grid">
                     <div class="system-card" id="atmosphere-card">
                         <div class="system-visual">
+                            <img src="images/atmospheric-circulation.png" alt="Global atmospheric circulation patterns" class="system-hero-image">
                             <canvas id="atmosphere-canvas"></canvas>
                         </div>
                         <div class="system-info">
@@ -221,6 +223,7 @@
 
                     <div class="system-card" id="ocean-card">
                         <div class="system-visual">
+                            <img src="images/ocean-currents.png" alt="Global ocean thermohaline circulation" class="system-hero-image">
                             <canvas id="ocean-canvas"></canvas>
                         </div>
                         <div class="system-info">
@@ -320,6 +323,7 @@
                     <!-- Trees -->
                     <div class="phenom-content" id="phenom-trees">
                         <div class="phenom-visual">
+                            <img src="images/tree-fractal-branching.png" alt="Tree fractal branching patterns" class="phenom-hero-image">
                             <canvas id="tree-canvas"></canvas>
                             <button class="trigger-btn" id="grow-btn">Grow Tree</button>
                         </div>
@@ -334,6 +338,7 @@
                     <!-- Ecosystems -->
                     <div class="phenom-content" id="phenom-ecosystems">
                         <div class="phenom-visual">
+                            <img src="images/ecosystem-food-web.png" alt="Ecosystem food web and energy flow" class="phenom-hero-image">
                             <canvas id="ecosystem-canvas"></canvas>
                             <div class="ecosystem-controls">
                                 <button class="trigger-btn" id="eco-reset">Reset</button>
@@ -438,6 +443,7 @@
                 <div class="molecular-demos">
                     <div class="mol-demo">
                         <div class="mol-visual">
+                            <img src="images/protein-folding.png" alt="Protein folding energy landscape" class="mol-hero-image">
                             <canvas id="protein-canvas"></canvas>
                         </div>
                         <div class="mol-info">
@@ -450,6 +456,7 @@
 
                     <div class="mol-demo">
                         <div class="mol-visual">
+                            <img src="images/enzyme-substrate.png" alt="Enzyme-substrate binding mechanism" class="mol-hero-image">
                             <canvas id="enzyme-canvas"></canvas>
                         </div>
                         <div class="mol-info">
@@ -462,6 +469,7 @@
 
                     <div class="mol-demo">
                         <div class="mol-visual">
+                            <img src="images/cellular-signaling.png" alt="Cellular signaling cascade network" class="mol-hero-image">
                             <canvas id="signaling-canvas"></canvas>
                         </div>
                         <div class="mol-info">
@@ -933,10 +941,10 @@
                         </div>
                     </div>
                     <div class="aleph-explanation">
-                        <p>When σ → 1, viability demands a <strong>respiration event</strong> — a non-unitary intervention that resets local stress while potentially increasing global rigidity. In the original GTTI framework, these are <strong>Aleph events</strong> (topological surgery); in quantum computing, they manifest as:</p>
+                        <p>When σ → 1, viability demands a <strong>respiration event</strong> — a non-unitary intervention that resets local stress while potentially increasing global rigidity. These discrete interventions (also called <strong>Aleph events</strong> for their topological surgery character) manifest in quantum computing as:</p>
                         <ul>
                             <li><strong>Measurements</strong> — projective collapse reducing entanglement entropy</li>
-                            <li><strong>Quantum gates</strong> — unitary operations resetting phase congestion locally</li>
+                            <li><strong>Quantum gates</strong> — operations resetting phase congestion locally</li>
                             <li><strong>Error corrections</strong> — syndrome measurements restoring codeword structure</li>
                         </ul>
                         <p>Each respiration event:</p>
@@ -981,45 +989,45 @@
                 </div>
 
                 <div class="mapping-table-section">
-                    <h2>The Extended Correspondence</h2>
-                    <table class="mapping-table extended-mapping">
+                    <h2>The Quantum-GTTI Correspondence</h2>
+                    <table class="mapping-table">
                         <thead>
                             <tr>
-                                <th>Original Concept</th>
-                                <th>New Version Expansion</th>
-                                <th>Key Change/Implication</th>
+                                <th>GTTI Continuum Concept</th>
+                                <th>Quantum Circuit Analog</th>
+                                <th>Physical Interpretation</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Homogenization Threshold (ε → 0, σ &lt; 1)</td>
-                                <td>Quantum Respiration Bound (τ ≤ Δm/ρ)</td>
-                                <td>Shifts from ratio-based trigger to time-bound on interventions; quantifies "clock speed" for preventing collapse</td>
+                                <td>History accumulation m*(t)</td>
+                                <td>Entanglement entropy / phase congestion</td>
+                                <td>Complexity that builds during unitary evolution, requiring eventual reset</td>
                             </tr>
                             <tr>
-                                <td>Aleph Event (discrete surgery)</td>
-                                <td>Respiration Event (non-unitary, e.g., measurements)</td>
-                                <td>Broader scope, ties to quantum biology-inspired "breathing" resets; emphasizes infinite recurrence</td>
+                                <td>Respiration bound τ ≤ Δm/ρ</td>
+                                <td>Maximum coherent evolution interval</td>
+                                <td>Upper limit on time between gates/measurements before viability fails</td>
                             </tr>
                             <tr>
-                                <td>Met Accumulation (M) = Circuit Depth</td>
-                                <td>Total Accumulated History M(T); D(T) ≥ ρT / Δm</td>
-                                <td>Adds lower bound on depth, implying D(T) → ∞ for long computations; links to entanglement growth limits</td>
+                                <td>Respiration event (Aleph)</td>
+                                <td>Gate / Measurement / Error correction</td>
+                                <td>Non-unitary intervention resetting local stress while adding to global Met</td>
                             </tr>
                             <tr>
-                                <td>Solvability Number σ(t)</td>
-                                <td>Retained implicitly in σ → 1 triggering events</td>
-                                <td>Less central; now governs when discrete Aleph is unavoidable in Zeno regimes</td>
+                                <td>Met accumulation M(T)</td>
+                                <td>Circuit depth D(T) ≥ ρT/Δm</td>
+                                <td>Total computational cost; grows linearly with computation time</td>
+                            </tr>
+                            <tr>
+                                <td>Hilbert dimension N = exp(μG)</td>
+                                <td>State space size 2<sup>n</sup></td>
+                                <td>Fixed capacity under Ġ = 0; cannot grow to offset accumulation</td>
                             </tr>
                             <tr class="highlight-row">
-                                <td>Rigidity Death (M → ∞, λ₀ → 0)</td>
-                                <td>Spectral Collapse (λ₁ → 0)</td>
-                                <td>Refines to positive gap for viability; aligns with undecidability of gaps in quantum materials</td>
-                            </tr>
-                            <tr>
-                                <td>Capacity C(g) ~ φ<sup>g</sup></td>
-                                <td>Hilbert Dimension N = exp(μG)</td>
-                                <td>Fixed topology (Ġ = 0) forces reliance on respiration rather than capacity growth</td>
+                                <td>Spectral collapse λ₁ → 0</td>
+                                <td>Decoherence / hardness wall</td>
+                                <td>Viability lost; equation Lφ = f becomes unsolvable</td>
                             </tr>
                         </tbody>
                     </table>
@@ -1222,16 +1230,16 @@
                 </div>
 
                 <div class="controversy-section">
-                    <h2>Implications & Potential Controversies</h2>
+                    <h2>Open Questions & Research Frontiers</h2>
                     <div class="controversy-content">
-                        <p>The Quantum Respiration Bound and Circuit Complexity Bound suggest <strong>fundamental limits on quantum algorithms</strong> that go beyond current engineering constraints:</p>
+                        <p>The Quantum Respiration Bound and Circuit Complexity Bound point toward <strong>fundamental limits on quantum algorithms</strong> that transcend current engineering constraints:</p>
                         <ul class="controversy-points">
-                            <li><strong>Indefinite viability demands linear intervention growth</strong> — challenging assumptions about passive error correction approaches</li>
-                            <li><strong>Spectral gaps are undecidable in general</strong> — creating fundamental uncertainty about whether a given system can maintain viability</li>
-                            <li><strong>Homogenization concepts in circuits are emerging</strong> for NISQ hardware, but remain contentious in their applicability to fault-tolerant quantum computing</li>
-                            <li><strong>"Respiration" analogies from biology</strong> (e.g., quantum tunneling in cellular respiration) may or may not faithfully map to computing bounds — this remains an open question</li>
+                            <li><strong>Indefinite viability demands linear intervention growth</strong> — no finite sequence of operations sustains arbitrarily long computation under persistent forcing</li>
+                            <li><strong>Spectral gap undecidability</strong> — the question of whether a given Hamiltonian maintains λ₁ > 0 is formally undecidable in general, creating irreducible uncertainty</li>
+                            <li><strong>NISQ-era constraints as mathematical necessities</strong> — current limitations in scaling quantum circuits may reflect these bounds rather than purely engineering challenges</li>
+                            <li><strong>Topological quantum computing connections</strong> — Aleph-like respiration events may relate to anyon braiding, suggesting deep links between topology and computational viability</li>
                         </ul>
-                        <p>These bounds invite scrutiny: Do they reflect true physical limitations, or artifacts of the mathematical framework? The connection to Zeno dynamics and Lindbladian homogenization suggests the former, but definitive resolution awaits experimental verification at scale.</p>
+                        <p>The connection to Zeno dynamics and Lindbladian homogenization provides strong theoretical grounding, while experimental verification at scale remains an active research frontier.</p>
                     </div>
                 </div>
 

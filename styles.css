@@ -461,6 +461,13 @@ body {
     background: var(--bg-secondary);
 }
 
+.viz-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
+}
+
 .viz-controls {
     display: flex;
     align-items: center;
@@ -792,6 +799,13 @@ body {
     height: 200px;
     border-radius: var(--radius-md);
     background: var(--bg-secondary);
+}
+
+.mol-hero-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-md);
+    margin-bottom: var(--spacing-md);
 }
 
 .mol-info h3 {
@@ -2157,27 +2171,20 @@ body {
     border: 1px solid rgba(6, 182, 212, 0.2);
 }
 
-/* Extended Mapping Table */
-.extended-mapping th,
-.extended-mapping td {
-    padding: var(--spacing-md);
-    font-size: 0.9rem;
-}
-
-.extended-mapping th:nth-child(3),
-.extended-mapping td:nth-child(3) {
-    font-size: 0.85rem;
-    color: var(--text-muted);
-    font-style: italic;
-}
-
-.extended-mapping td:first-child {
+/* Enhanced Mapping Table */
+.mapping-table td:first-child {
     color: var(--text-primary);
     font-weight: 500;
 }
 
-.extended-mapping td:nth-child(2) {
+.mapping-table td:nth-child(2) {
     color: var(--accent-hhl);
+}
+
+.mapping-table td:nth-child(3) {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    font-style: italic;
 }
 
 /* Implication Blocks */
@@ -2290,12 +2297,12 @@ body {
         gap: var(--spacing-sm);
     }
     
-    .extended-mapping {
-        font-size: 0.8rem;
+    .mapping-table {
+        font-size: 0.85rem;
     }
     
-    .extended-mapping th,
-    .extended-mapping td {
+    .mapping-table th,
+    .mapping-table td {
         padding: var(--spacing-sm);
     }
 }
